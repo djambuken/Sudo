@@ -25,5 +25,5 @@ This simulator uses a realistic reference range for an extreme storm world:
 
 ## Run it
 ```bash
-python3 sudo_weather.py
+python3 sudo.py
 ```
