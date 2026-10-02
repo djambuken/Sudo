@@ -105,8 +105,15 @@ class SudoWeatherTracker:
         print()
 
     def command_yy(self):
-        period_label = "Next 7 Days of Extreme Storm Forecast" if self.storm_mode else "Past 7 Days of the Current Calendar Week"
-        self.print_week("7-DAY RAINFALL & STORM DATA FOR PLANET SUDO", period_label)
+        storm_mode = self.storm_mode
+        self.storm_mode = False
+        try:
+            self.print_week(
+                "7-DAY RAINFALL & STORM DATA FOR PLANET SUDO",
+                "Past 7 Days of the Current Calendar Week",
+            )
+        finally:
+            self.storm_mode = storm_mode
 
     def command_0000(self):
         self.storm_mode = True
@@ -116,7 +123,10 @@ class SudoWeatherTracker:
         print("Expect humidity-driven severe rainfall and violent winds up to 3500 MPH,")
         print("frequent thunderstorms, and lightning storms.")
         print()
-        self.command_yy()
+        self.print_week(
+            "7-DAY EXTREME STORM FORECAST FOR PLANET SUDO",
+            "Next 7 Days of Extreme Storm Forecast",
+        )
 
     def command_reset(self):
         self.storm_mode = False

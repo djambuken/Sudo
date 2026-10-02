@@ -9,8 +9,8 @@ It simulates precipitation, wind, humidity, thunderstorm days, and lightning eve
 - Weekly totals and daily metrics
 
 ## Commands
-- `YY` — show a 7-day realistic forecast for Sudo
-- `0000` — trigger extreme weather for the next 7 days
+- `YY` — show the past 7 days of baseline weather, including after a storm forecast
+- `0000` — show a separate extreme-weather forecast for the next 7 days
 - `RESET` — clear the storm state and reset the weather system
 - `HELP` — display the command list
 - `EXIT` — leave the app
