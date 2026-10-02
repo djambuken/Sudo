@@ -116,6 +116,7 @@ class SudoWeatherTracker:
         print("Expect humidity-driven severe rainfall and violent winds up to 3500 MPH,")
         print("frequent thunderstorms, and lightning storms.")
         print()
+        self.command_yy()
 
     def command_reset(self):
         self.storm_mode = False
@@ -128,7 +129,7 @@ class SudoWeatherTracker:
         print()
         print("SUDO COMMANDS")
         print("YY     => Show the past 7 days of rainfall and weather data")
-        print("0000   => Trigger extreme weather conditions for the next 7 days")
+        print("0000   => Activate and show the extreme 7-day weather forecast")
         print("RESET  => Disable storm mode and return to baseline")
         print("HELP   => Show this command list")
         print("EXIT   => Close the Sudo weather app")
@@ -143,7 +144,7 @@ def main():
     print()
     print("Weather tracker online.")
     print("Enter 'YY' to show the current 7-day weather data.")
-    print("Enter '0000' to activate extreme weather, then 'YY' to show it.")
+    print("Enter '0000' to activate and show the extreme weather forecast.")
     print("Type 'HELP' for command options.")
     print()
 
