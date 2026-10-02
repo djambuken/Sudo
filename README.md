@@ -1,6 +1,6 @@
 # Sudo Weather Tracker
 
-This project adds a terminal app for a fictional green-water planet called Sudo. It simulates precipitation, wind, humidity, thunderstorm days, and lightning events for a 7-day cycle.
+This project adds a terminal app for a green-water planet called Sudo. It simulates precipitation, wind, humidity, thunderstorm days, and lightning events for a 7-day cycle.
 
 ## Features
 - 7-day rainfall and weather analysis
@@ -15,12 +15,6 @@ This project adds a terminal app for a fictional green-water planet called Sudo.
 - `RESET` — clear the storm state and reset the weather system
 - `HELP` — display the command list
 - `EXIT` — leave the app
-
-## Example
-```text
-SUDO [PLANET]
-ENTER THE COMMAND ; YY
-```
 
 ## Weather scale used
 This simulator uses a realistic reference range for an extreme storm world:
