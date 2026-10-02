@@ -1,6 +1,6 @@
-# Sudo Weather Tracker
+# Sudo [PLANET] ^@^ ! // A code for a tracker and machine for weather for a green-water filled planet named Sudo.
 
-This project adds a terminal app for a green-water planet called Sudo. It simulates precipitation, wind, humidity, thunderstorm days, and lightning events for a 7-day cycle.
+It simulates precipitation, wind, humidity, thunderstorm days, and lightning events for a 7-day cycle.
 
 ## Features
 - 7-day rainfall and weather analysis
