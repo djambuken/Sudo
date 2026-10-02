@@ -22,7 +22,25 @@ This simulator uses a realistic reference range for an extreme storm world:
 - Wind: 1,000 to 2,000 mph in baseline weeks; 3,000 to 3,500 mph in storm mode
 - Thunderstorms and lightning can appear several times per week during extreme conditions
 
+## Make it available to users
+
+Make the GitHub repository public, then share this link:
+[https://github.com/djambuken/Sudo](https://github.com/djambuken/Sudo)
+
+Users need Python 3 and Git. To download and start the app, they can run:
+```bash
+git clone https://github.com/djambuken/Sudo.git
+cd Sudo
+python3 sudo.py
+```
+
+Alternatively, users can select **Code > Download ZIP** on GitHub, extract the archive, open a terminal in the extracted `Sudo` folder, and run `python3 sudo.py`.
+
 ## Run it
+
+From the project folder, run:
 ```bash
 python3 sudo.py
 ```
+
+Enter `0000` to display the extreme-weather forecast. Enter `YY` to display baseline weather.
