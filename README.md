@@ -22,13 +22,34 @@ This simulator uses a realistic reference range for an extreme storm world:
 - Wind: 1,000 to 2,000 mph in baseline weeks; 3,000 to 3,500 mph in storm mode
 - Thunderstorms and lightning can appear several times per week during extreme conditions
 
-## For users
-
-Users need Python 3 and Git. To download and start the app, they can run in terminal:
----
-bash
+## For Users
+ 
+### Requirements
+ 
+Make sure you have:
+ 
+- Python 3
+- Git
+ 
+### Installation
+ 
+Clone the repository:
+ 
+```bash
 git clone https://github.com/djambuken/Sudo.git
 cd Sudo
 python3 sudo.py
----
-Alternatively, users can select **Code > Download ZIP** on GitHub, extract the archive, open a terminal in the extracted `Sudo` folder, and run `python3 sudo.py`.
+```
+ 
+### Download ZIP
+ 
+If you don't want to use Git:
+ 
+1. Click **Code > Download ZIP**.
+2. Extract the ZIP file.
+3. Open a terminal inside the extracted `Sudo` folder.
+4. Run:
+ 
+```bash
+python3 sudo.py
+```
