@@ -24,7 +24,7 @@ This simulator uses a realistic reference range for an extreme storm world:
 
 ## For users
 
-Users need Python 3 and Git. To download and start the app, they can run:
+Users need Python 3 and Git. To download and start the app, they can run in terminal:
 ---
 bash
 git clone https://github.com/djambuken/Sudo.git
