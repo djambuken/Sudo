@@ -17,9 +17,9 @@ It simulates precipitation, wind, humidity, thunderstorm days, and lightning eve
 
 ## Weather scale used
 This simulator uses a realistic reference range for an extreme storm world:
-- Humidity: 90% to 100% during storm mode
-- Rainfall: 500 mm to 2500 mm per day during extreme storm conditions
-- Wind: up to 3500 mph in severe storm cycles
+- Humidity: 94% to 100% during storm mode
+- Rainfall: about 1,950 mm to 4,250 mm per day during extreme storm conditions, increasing with humidity
+- Wind: 1,000 to 2,000 mph in baseline weeks; 3,000 to 3,500 mph in storm mode
 - Thunderstorms and lightning can appear several times per week during extreme conditions
 
 ## Run it

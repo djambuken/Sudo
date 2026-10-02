@@ -29,7 +29,7 @@ class SudoWeatherTracker:
         self.days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     def baseline_day(self, day_index):
-        wind = round(random.uniform(40, 220), 1)
+        wind = round(random.uniform(1000, 2000), 1)
         humidity = round(random.uniform(58, 84), 1)
         rainfall = round(random.uniform(80, 520), 1)
         thunderstorm = random.randint(0, 2)
@@ -45,9 +45,10 @@ class SudoWeatherTracker:
         }
 
     def extreme_day(self, day_index):
-        wind = round(random.uniform(1800, 3500), 1)
         humidity = round(random.uniform(94, 100), 1)
-        rainfall = round(random.uniform(1200, 2600), 1)
+        wind = round(random.uniform(3000, 3500), 1)
+        humidity_intensity = (humidity - 94) / 6
+        rainfall = round(2200 + (1800 * humidity_intensity) + random.uniform(-250, 250), 1)
         thunderstorm = random.randint(2, 6)
         lightning = random.randint(1, 6)
         return {
@@ -68,10 +69,10 @@ class SudoWeatherTracker:
     def generate_week(self):
         return [self.generate_day(i + 1) for i in range(7)]
 
-    def print_week(self, heading):
+    def print_week(self, heading, period_label):
         week = self.generate_week()
         total_rain = sum(day["rainfall_mm"] for day in week)
-        total_wind = sum(day["wind_mph"] for day in week)
+        avg_wind = sum(day["wind_mph"] for day in week) / len(week)
         avg_humidity = sum(day["humidity_pct"] for day in week) / 7
         total_thunder = sum(day["thunderstorms"] for day in week)
         total_lightning = sum(day["lightning_storms"] for day in week)
@@ -79,7 +80,7 @@ class SudoWeatherTracker:
         print()
         print(heading)
         print("--------------------------------------------------")
-        print("Past 7 Days of the Current Calendar Week")
+        print(period_label)
         print("--------------------------------------------------")
 
         for i, day in enumerate(week):
@@ -94,7 +95,7 @@ class SudoWeatherTracker:
 
         print("--------------------------------------------------")
         print(
-            f"WEEKLY TOTALS | Wind: {total_wind:>9.1f} mph | "
+            f"WEEKLY TOTALS | Avg Wind: {avg_wind:>7.1f} mph | "
             f"Avg Humidity: {avg_humidity:>5.1f}% | "
             f"Rain: {total_rain:>9.1f} mm | "
             f"Thunderstorms: {total_thunder:>2} | "
@@ -104,14 +105,15 @@ class SudoWeatherTracker:
         print()
 
     def command_yy(self):
-        self.print_week("7-DAY RAINFALL & STORM DATA FOR PLANET SUDO")
+        period_label = "Next 7 Days of Extreme Storm Forecast" if self.storm_mode else "Past 7 Days of the Current Calendar Week"
+        self.print_week("7-DAY RAINFALL & STORM DATA FOR PLANET SUDO", period_label)
 
     def command_0000(self):
         self.storm_mode = True
         print()
         print("0000 ENGAGED")
         print("EXTREME WEATHER SYSTEM ACTIVATED FOR THE NEXT 7 DAYS")
-        print("Expect severe rainfall, extreme humidity, violent wind up to 3500 MPH,")
+        print("Expect humidity-driven severe rainfall and violent winds up to 3500 MPH,")
         print("frequent thunderstorms, and lightning storms.")
         print()
 
@@ -140,12 +142,10 @@ def main():
     print(red_label("# Sudo [PLANET]"))
     print()
     print("Weather tracker online.")
-    print("The last 7 calendar days are shown below in order.")
-    print("Enter '0000' to simulate the next extreme 7-day weather event.")
+    print("Enter 'YY' to show the current 7-day weather data.")
+    print("Enter '0000' to activate extreme weather, then 'YY' to show it.")
     print("Type 'HELP' for command options.")
     print()
-
-    tracker.command_yy()
 
     while True:
         try:
