@@ -4,7 +4,6 @@ It simulates precipitation, wind, humidity, thunderstorm days, and lightning eve
 
 ## Features
 - 7-day rainfall and weather analysis
-- Random-but-planet-appropriate values for Sudo
 - Extreme storm mode triggered by `0000`
 - Reset command to restore normal conditions
 - Weekly totals and daily metrics
